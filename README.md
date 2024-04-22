@@ -4,6 +4,18 @@
 
 Node.js 20.x
 
+## Quick Install
+
+```
+cd frontend
+npm i
+cd ../backend
+npm i
+cd ..
+npm i
+```
+
+
 ## Frontend
 
 The Frontend is built with [Next.js](https://nextjs.org/), a React framework. It uses [Flowbite](https://flowbite.com/)
@@ -19,7 +31,6 @@ cd frontend
 
 ```bash
 npm i
-npm dev
 ```
 
 ## Backend
@@ -45,7 +56,6 @@ cd backend
 
 ```bash
 npm i
-npm develop
 ```
 
 
@@ -54,6 +64,7 @@ npm develop
 You can run the frontend and backend concurrently by running the following command in the root directory:
 
 ```bash
+npm i
 npm run dev
 ```
 
