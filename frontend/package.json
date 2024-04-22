@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@daypilot/daypilot-lite-react": "^3.21.0",
     "autoprefixer": "10.4.19",
     "flowbite": "2.3.0",
     "flowbite-react": "0.9.0",
