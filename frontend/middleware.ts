@@ -1,33 +1,20 @@
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import { verifyJwtToken } from "@/libs/auth";
 
-const verifyJwtToken = async (token: string) => {
-  try {
-    const response = await fetch("http://localhost:1337/api/users/me", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (!response.ok) {
-      return false;
-    }
-
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
-
-const AUTH_PAGES = ["/login", "/register", "/pouet"];
+const AUTH_PAGES = ["/login", "/register"];
 
 const isAuthPages = (url: string) =>
   AUTH_PAGES.some((page) => page.startsWith(url));
 
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
+  console.log("=======================+> middleware.ts");
   const { url, nextUrl, cookies } = request;
   const { value: token } = cookies.get("token") ?? { value: null };
 
-  const hasVerifiedToken = token && (await verifyJwtToken(token));
+  console.log("token", token);
+
+  const hasVerifiedToken = token && verifyJwtToken(token);
   const isAuthPageRequested = isAuthPages(nextUrl.pathname);
 
   if (isAuthPageRequested) {
@@ -52,7 +39,11 @@ export async function middleware(request: NextRequest) {
     return response;
   }
 
+  console.log("is verified");
+
   return NextResponse.next();
 }
 
-// export const config = { matcher: ["/login", "/pouet", "/panel/:path*"] };
+export const config = {
+  matcher: "/pouet/:path*",
+};
