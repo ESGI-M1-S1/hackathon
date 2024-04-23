@@ -896,6 +896,38 @@ export interface ApiGrapeVarietyGrapeVariety extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -1159,6 +1191,7 @@ declare module '@strapi/types' {
       'api::country.country': ApiCountryCountry;
       'api::event.event': ApiEventEvent;
       'api::grape-variety.grape-variety': ApiGrapeVarietyGrapeVariety;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::product.product': ApiProductProduct;
       'api::region.region': ApiRegionRegion;
       'api::registration.registration': ApiRegistrationRegistration;
