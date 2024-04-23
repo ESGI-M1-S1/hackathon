@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import axios from 'axios';
 
@@ -12,7 +13,8 @@ const Page = async () => {
         const response = await axios.get(`${strapiAPIUrl}/events`);
         setEvents(response.data);
     } catch (err) {
-        setError(err);
+        // Type casting or specific error handling (recommended)
+        setError(err as Error); // Cast to Error type
     } finally {
         setIsLoading(false);
     }
