@@ -1,6 +1,4 @@
-/* calendar event */
-
-.month_default_event {
+calendar event .month_default_event {
     overflow: hidden;
     border-radius: 15px;
 }
