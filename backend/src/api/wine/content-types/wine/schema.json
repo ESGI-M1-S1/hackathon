@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wines",
+  "info": {
+    "singularName": "wine",
+    "pluralName": "wines",
+    "displayName": "Wine",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "capacity": {
+      "type": "integer"
+    },
+    "vintage": {
+      "type": "date"
+    },
+    "name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "region": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::region.region"
+    },
+    "grape_varieties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grape-variety.grape-variety"
+    }
+  }
+}

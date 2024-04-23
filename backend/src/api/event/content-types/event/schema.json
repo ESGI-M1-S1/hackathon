@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "workshop": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::workshop.workshop",
+      "inversedBy": "events"
+    },
+    "attendant_limit": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "visibility_date": {
+      "type": "datetime"
+    },
+    "registration_limit_date": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "time"
+    },
+    "password": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "datetime"
+    },
+    "registrations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::registration.registration",
+      "mappedBy": "event"
+    }
+  }
+}

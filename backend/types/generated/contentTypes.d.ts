@@ -788,6 +788,356 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCountryCountry extends Schema.CollectionType {
+  collectionName: 'countries';
+  info: {
+    singularName: 'country';
+    pluralName: 'countries';
+    displayName: 'Country';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::country.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::country.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    workshop: Attribute.Relation<
+      'api::event.event',
+      'manyToOne',
+      'api::workshop.workshop'
+    >;
+    attendant_limit: Attribute.Integer;
+    location: Attribute.String;
+    visibility_date: Attribute.DateTime;
+    registration_limit_date: Attribute.DateTime;
+    duration: Attribute.Time;
+    password: Attribute.String;
+    event_date: Attribute.DateTime;
+    registrations: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::registration.registration'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGrapeVarietyGrapeVariety extends Schema.CollectionType {
+  collectionName: 'grape_varieties';
+  info: {
+    singularName: 'grape-variety';
+    pluralName: 'grape-varieties';
+    displayName: 'Grape variety';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::grape-variety.grape-variety',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::grape-variety.grape-variety',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    quantity: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRegionRegion extends Schema.CollectionType {
+  collectionName: 'regions';
+  info: {
+    singularName: 'region';
+    pluralName: 'regions';
+    displayName: 'Region';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    country: Attribute.Relation<
+      'api::region.region',
+      'oneToOne',
+      'api::country.country'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::region.region',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::region.region',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRegistrationRegistration extends Schema.CollectionType {
+  collectionName: 'registrations';
+  info: {
+    singularName: 'registration';
+    pluralName: 'registrations';
+    displayName: 'Registration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    event: Attribute.Relation<
+      'api::registration.registration',
+      'manyToOne',
+      'api::event.event'
+    >;
+    email: Attribute.Email;
+    registration_state: Attribute.Enumeration<['pending', 'validated']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::registration.registration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::registration.registration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRessourceRessource extends Schema.CollectionType {
+  collectionName: 'ressources';
+  info: {
+    singularName: 'ressource';
+    pluralName: 'ressources';
+    displayName: 'Ressource';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    link: Attribute.String;
+    password: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ressource.ressource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ressource.ressource',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Schema.CollectionType {
+  collectionName: 'tags';
+  info: {
+    singularName: 'tag';
+    pluralName: 'tags';
+    displayName: 'Tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    color: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWineWine extends Schema.CollectionType {
+  collectionName: 'wines';
+  info: {
+    singularName: 'wine';
+    pluralName: 'wines';
+    displayName: 'Wine';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capacity: Attribute.Integer;
+    vintage: Attribute.Date;
+    name: Attribute.String;
+    quantity: Attribute.Integer;
+    region: Attribute.Relation<
+      'api::wine.wine',
+      'oneToOne',
+      'api::region.region'
+    >;
+    grape_varieties: Attribute.Relation<
+      'api::wine.wine',
+      'oneToMany',
+      'api::grape-variety.grape-variety'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::wine.wine', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::wine.wine', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWorkshopWorkshop extends Schema.CollectionType {
+  collectionName: 'workshops';
+  info: {
+    singularName: 'workshop';
+    pluralName: 'workshops';
+    displayName: 'Workshop';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    preview_img: Attribute.Media;
+    events: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToMany',
+      'api::event.event'
+    >;
+    tags: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToMany',
+      'api::tag.tag'
+    >;
+    ressources: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToMany',
+      'api::ressource.ressource'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::workshop.workshop',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +1156,16 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::country.country': ApiCountryCountry;
+      'api::event.event': ApiEventEvent;
+      'api::grape-variety.grape-variety': ApiGrapeVarietyGrapeVariety;
+      'api::product.product': ApiProductProduct;
+      'api::region.region': ApiRegionRegion;
+      'api::registration.registration': ApiRegistrationRegistration;
+      'api::ressource.ressource': ApiRessourceRessource;
+      'api::tag.tag': ApiTagTag;
+      'api::wine.wine': ApiWineWine;
+      'api::workshop.workshop': ApiWorkshopWorkshop;
     }
   }
 }
