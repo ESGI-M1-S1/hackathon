@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grape_varieties",
+  "info": {
+    "singularName": "grape-variety",
+    "pluralName": "grape-varieties",
+    "displayName": "Grape variety",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
