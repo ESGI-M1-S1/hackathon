@@ -119,9 +119,9 @@ export class MonthlyCalendar extends Component {
         },
         {
           id: 5,
-          text: "Event 5",
+          text: "Event 6",
           start: "2022-11-15",
-          end: "2022-11-16",
+          end: "2022-11-21",
         },
       ],
     });
