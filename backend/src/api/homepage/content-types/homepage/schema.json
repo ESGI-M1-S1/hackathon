@@ -4,7 +4,8 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage"
+    "displayName": "Homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,40 @@
     "title": {
       "type": "string"
     },
-    "image": {
+    "buttonLink": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "subtext": {
+      "type": "string"
+    },
+    "contentTitle": {
+      "type": "string"
+    },
+    "imgLeftSrc": {
+      "type": "string"
+    },
+    "textRight": {
+      "type": "text"
+    },
+    "imgRightSrc": {
+      "type": "string"
+    },
+    "textLeft": {
+      "type": "text"
+    },
+    "bannerTitle": {
+      "type": "string"
+    },
+    "bannerButtonLink": {
+      "type": "string"
+    },
+    "bannerSubtitle": {
+      "type": "text"
+    },
+    "heroImg": {
       "allowedTypes": [
         "images",
         "files",
@@ -23,9 +57,6 @@
       ],
       "type": "media",
       "multiple": false
-    },
-    "description": {
-      "type": "text"
     }
   }
 }
