@@ -32,7 +32,6 @@ const Page = ({
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    console.log(formData.get("password"));
     handleLogin(
       formData.get("email") as string,
       formData.get("password") as string
