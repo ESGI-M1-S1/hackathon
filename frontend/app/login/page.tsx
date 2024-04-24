@@ -40,7 +40,7 @@ const Page = ({
   };
 
   return (
-    <Card className="max-w-sm">
+    <Card className="max-w-sm align-middle my-44 mx-auto">
       <form onSubmit={onSubmit} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">
