@@ -824,6 +824,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     singularName: 'event';
     pluralName: 'events';
     displayName: 'Event';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -846,6 +847,11 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'api::event.event',
       'oneToMany',
       'api::registration.registration'
+    >;
+    ressources: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::ressource.ressource'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -902,14 +908,25 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     singularName: 'homepage';
     pluralName: 'homepages';
     displayName: 'Homepage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    image: Attribute.Media;
-    description: Attribute.Text;
+    buttonLink: Attribute.String;
+    subtitle: Attribute.String;
+    subtext: Attribute.String;
+    contentTitle: Attribute.String;
+    imgLeftSrc: Attribute.String;
+    textRight: Attribute.Text;
+    imgRightSrc: Attribute.String;
+    textLeft: Attribute.Text;
+    bannerTitle: Attribute.String;
+    bannerButtonLink: Attribute.String;
+    bannerSubtitle: Attribute.Text;
+    heroImg: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
