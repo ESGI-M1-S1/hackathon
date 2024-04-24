@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
 
+
   return (
     <main>
       <section className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
