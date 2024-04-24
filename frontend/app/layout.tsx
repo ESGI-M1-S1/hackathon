@@ -63,6 +63,7 @@ export default function RootLayout({
               <NavbarCollapse>
                 <Navlink href="/">Accueil</Navlink>
                 <Navlink href="/about">A propos</Navlink>
+                <Navlink href="/workshop">Ateliers</Navlink>
                 <Navlink href="/contact">Contact</Navlink>
                 <Navlink href="/resources">Ressources</Navlink>
               </NavbarCollapse>
