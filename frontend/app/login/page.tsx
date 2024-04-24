@@ -16,11 +16,17 @@ const Page = ({
     if (searchParams.next) {
       router.replace(searchParams.next);
     }
-    const { data } = await axios.post("http://localhost:1337/api/auth/local", {
-      identifier: login,
-      password: password,
-    });
-    cookie.set("token", data.jwt);
+    axios
+      .post("http://localhost:1337/api/auth/local", {
+        identifier: login,
+        password: password,
+      })
+      .then((res) => {
+        cookie.set("token", res.data.jwt);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const onSubmit = (e: any) => {
@@ -30,7 +36,7 @@ const Page = ({
     console.log(formData.get("password"));
     handleLogin(
       formData.get("email") as string,
-      formData.get("password") as string
+      formData.get("password") as string,
     );
   };
 
