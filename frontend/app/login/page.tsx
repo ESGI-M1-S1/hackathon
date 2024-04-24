@@ -2,7 +2,6 @@
 import React from "react";
 import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
 import cookie from "@boiseitguru/cookie-cutter";
 import { useRouter } from "next/navigation";
 
@@ -36,7 +35,7 @@ const Page = ({
     console.log(formData.get("password"));
     handleLogin(
       formData.get("email") as string,
-      formData.get("password") as string,
+      formData.get("password") as string
     );
   };
 
