@@ -29,7 +29,7 @@ const LeftSideMenu = ({ onFilterChange }) => {
         };
 
         setFilters(updatedFilters);
-        onFilterChange(updatedFilters); // Pass the updated filters to the parent component
+        onFilterChange(updatedFilters);
     };
 
     const handleDateRangeChange = (ranges) => {
@@ -42,7 +42,7 @@ const LeftSideMenu = ({ onFilterChange }) => {
         };
 
         setFilters(updatedFilters);
-        onFilterChange(updatedFilters); // Pass the updated filters to the parent component
+        onFilterChange(updatedFilters);
     };
 
     const handleTagChange = (e) => {
@@ -53,7 +53,7 @@ const LeftSideMenu = ({ onFilterChange }) => {
         };
 
         setFilters(updatedFilters);
-        onFilterChange(updatedFilters); // Pass the updated filters to the parent component
+        onFilterChange(updatedFilters);
     };
 
     const handleDurationChange = (e) => {
@@ -64,7 +64,7 @@ const LeftSideMenu = ({ onFilterChange }) => {
         };
 
         setFilters(updatedFilters);
-        onFilterChange(updatedFilters); // Pass the updated filters to the parent component
+        onFilterChange(updatedFilters);
     };
 
     const handleTagClick = (selectedTag) => {
@@ -72,11 +72,11 @@ const LeftSideMenu = ({ onFilterChange }) => {
             const updatedFilters = {
                 ...filters,
                 tags: [...filters.tags, selectedTag],
-                tag: '' // Clear the tag input after selecting a tag
+                tag: ''
             };
 
             setFilters(updatedFilters);
-            onFilterChange(updatedFilters); // Pass the updated filters to the parent component
+            onFilterChange(updatedFilters);
         }
     };
 
@@ -87,13 +87,16 @@ const LeftSideMenu = ({ onFilterChange }) => {
         };
 
         setFilters(updatedFilters);
-        onFilterChange(updatedFilters); // Pass the updated filters to the parent component
+        onFilterChange(updatedFilters);
     };
 
-    const filteredTags = tagList.filter(tag => tag.toLowerCase().includes(filters.tag ? filters.tag.toLowerCase() : ''));
+    const filteredTags = tagList.filter(tag =>
+        !filters.tags.includes(tag) &&
+        tag.toLowerCase().includes(filters.tag ? filters.tag.toLowerCase() : '')
+    );
 
     return (
-        <div className="fixed left-0 top-0 h-full bg-gray-200 p-4 shadow-lg">
+        <div className="absolute left-0 top-0 h-full w-72 bg-gray-200 p-4 shadow-lg z-20 overflow-y-auto">
             <h3 className="mb-4 text-center font-extrabold">Filtres</h3>
             <div className="mb-4">
                 <label htmlFor="location" className="block text-sm font-medium text-gray-600">Location:</label>
