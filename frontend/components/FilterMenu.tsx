@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DateRangePicker from "@/components/ui/DateRangePicker";
 
-const LeftSideMenu = ({ onFilterChange }) => {
+const FilterMenu = ({ onFilterChange }) => {
     const [filters, setFilters] = useState({
         location: '',
         participants: '',
@@ -96,7 +96,7 @@ const LeftSideMenu = ({ onFilterChange }) => {
     );
 
     return (
-        <div className="absolute left-0 top-0 h-full w-72 bg-gray-200 p-4 shadow-lg z-20 overflow-y-auto">
+        <div className="sticky left-0 top-0 h-screen w-[22rem] bg-gray-200 p-4 shadow-lg z-20 overflow-y-auto">
             <h3 className="mb-4 text-center font-extrabold">Filtres</h3>
             <div className="mb-4">
                 <label htmlFor="location" className="block text-sm font-medium text-gray-600">Location:</label>
@@ -186,4 +186,4 @@ const LeftSideMenu = ({ onFilterChange }) => {
     );
 };
 
-export default LeftSideMenu;
+export default FilterMenu;
