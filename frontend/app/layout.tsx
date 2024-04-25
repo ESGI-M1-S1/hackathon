@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Amethysta } from "next/font/google";
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/app/components/ReactQueryClientProvider";
 import { ReactNode } from "react";
@@ -13,14 +13,13 @@ import {
   Navbar,
   NavbarBrand,
   NavbarCollapse,
-  NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
 import Link from "next/link";
 import Image from "next/image";
 import Navlink from "@/app/components/Navlink";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Amethysta({ weight: "400", style: "normal", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,7 +35,10 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="fr">
         <body className={inter.className}>
-          <Navbar fluid className="bg-black border-b-2 border-brownText">
+          <Navbar
+            fluid
+            className="bg-black border-b-2 border-brown text-brownText"
+          >
             <div className={"flex items-center gap-8"}>
               <NavbarBrand as={Link} href="/">
                 <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
