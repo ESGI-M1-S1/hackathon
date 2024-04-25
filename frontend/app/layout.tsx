@@ -7,9 +7,6 @@ import {
   Button,
   Footer,
   FooterBrand,
-  FooterCopyright,
-  FooterDivider,
-  FooterIcon,
   FooterLink,
   FooterLinkGroup,
   FooterTitle,
@@ -19,13 +16,6 @@ import {
   NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import Navlink from "@/app/components/Navlink";
@@ -46,21 +36,22 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="fr">
         <body className={inter.className}>
-          <Navbar fluid rounded>
+          <Navbar fluid className="bg-black border-b-2 border-brownText">
             <div className={"flex items-center gap-8"}>
-              <NavbarBrand as={Link} href="https://flowbite-react.com">
+              <NavbarBrand as={Link} href="/">
                 <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
                   <Image
-                    src="https://flowbite.s3.amazonaws.com/brand/logo-light/mark/flowbite-logo.svg"
-                    alt="Flowbite React Logo"
+                    src="/wineLogo.png"
+                    alt="Wine logo"
                     fill
+                    className=""
                   />
                 </div>
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                  Wine&Co
+                <span className="self-center whitespace-nowrap text-xl text-brown font-semibold dark:text-white">
+                  Et Si Le Vin ?
                 </span>
               </NavbarBrand>
-              <NavbarCollapse>
+              <NavbarCollapse className="!text-brown">
                 <Navlink href="/">Accueil</Navlink>
                 <Navlink href="/about">A propos</Navlink>
                 <Navlink href="/workshop">Ateliers</Navlink>
@@ -69,57 +60,42 @@ export default function RootLayout({
               </NavbarCollapse>
             </div>
             <div className="flex">
-              <Button className={"hidden md:block"}>Get started</Button>
+              <Button className="bg-brown text-white">
+                Participer à un atelier
+              </Button>
               <NavbarToggle />
             </div>
           </Navbar>
           <>{children}</>
-          <Footer container>
-            <div className="w-full">
-              <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-                <div>
-                  <FooterBrand
-                    href="https://flowbite.com"
-                    src="https://flowbite.com/docs/images/logo.svg"
-                    alt="Flowbite Logo"
-                    name="Flowbite"
-                  />
-                </div>
-                <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
-                  <div>
-                    <FooterTitle title="about" />
-                    <FooterLinkGroup col>
-                      <FooterLink href="#">Flowbite</FooterLink>
-                      <FooterLink href="#">Tailwind CSS</FooterLink>
-                    </FooterLinkGroup>
-                  </div>
-                  <div>
-                    <FooterTitle title="Follow us" />
-                    <FooterLinkGroup col>
-                      <FooterLink href="#">Github</FooterLink>
-                      <FooterLink href="#">Discord</FooterLink>
-                    </FooterLinkGroup>
-                  </div>
-                  <div>
-                    <FooterTitle title="Legal" />
-                    <FooterLinkGroup col>
-                      <FooterLink href="#">Privacy Policy</FooterLink>
-                      <FooterLink href="#">Terms &amp; Conditions</FooterLink>
-                    </FooterLinkGroup>
-                  </div>
-                </div>
-              </div>
-              <FooterDivider />
-              <div className="w-full sm:flex sm:items-center sm:justify-between">
-                <FooterCopyright href="#" by="Flowbite™" year={2022} />
-                <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                  <FooterIcon href="#" icon={BsFacebook} />
-                  <FooterIcon href="#" icon={BsInstagram} />
-                  <FooterIcon href="#" icon={BsTwitter} />
-                  <FooterIcon href="#" icon={BsGithub} />
-                  <FooterIcon href="#" icon={BsDribbble} />
-                </div>
-              </div>
+          <Footer
+            container
+            className="border-t-2 border-t-brown rounded-none bg-black pt-12"
+          >
+            <div className="w-3/6 flex flex-col items-center">
+              <FooterBrand
+                href="/"
+                src="/wineLogo.png"
+                alt="Wine logo"
+                className="flex flex-col "
+              />
+              <span className="text-white whitespace-nowrap text-2xl font-semibold">
+                Et Si Le Vin ?
+              </span>
+            </div>
+            <div className="flex justify-start items-start w-3/6">
+              <FooterLinkGroup col className="text-white mr-60">
+                <FooterTitle title="Pages" className="text-white" />
+                <FooterLink href="/">Accueil</FooterLink>
+                <FooterLink href="/about">A propos</FooterLink>
+                <FooterLink href="/contact">Contact</FooterLink>
+                <FooterLink href="/resources">Ressources</FooterLink>
+              </FooterLinkGroup>
+              <FooterLinkGroup col className="text-white">
+                <FooterTitle title="Mention légale" className="text-white" />
+                <FooterLink href="#">Conditions générales</FooterLink>
+                <FooterLink href="#">Politique de confidentialité</FooterLink>
+                <FooterLink href="#">Paramètres des cookies</FooterLink>
+              </FooterLinkGroup>
             </div>
           </Footer>
         </body>

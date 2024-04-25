@@ -12,8 +12,10 @@ const config: Config = {
   theme: {
     colors: {
       black: "#050505",
-      brown: "#AF9B8B",
+      brownText: "#DBBCA4",
+      brown: "#AD6F3D",
       white: "#F1ECE9",
+      red: "#80002D",
     },
   },
 };
