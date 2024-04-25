@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({
     location = 'Paris',
     date = '2024-12-12',
     places = '40',
-    imageUrl = 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg',
     price = '20',
     isPrivate = true
 }) => {
@@ -43,7 +43,7 @@ const Card: React.FC<CardProps> = ({
             <Link href={href} passHref className="text-center">
                 <h5 className="my-3 text-2xl font-bold tracking-tight text-brownText dark:text-white">{title}</h5>
             </Link>
-            <div className="p-5">
+            <div>
                 <div className="flex gap-3 my-3 text-brownText">
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
 
@@ -62,7 +62,7 @@ const Card: React.FC<CardProps> = ({
                 </div>
                 <div className="flex gap-3 my-3 text-brownText">
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                    <svg class="w-6 h-6 text-brownText dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-brownText dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4.5 17H4a1 1 0 0 1-1-1 3 3 0 0 1 3-3h1m0-3.05A2.5 2.5 0 1 1 9 5.5M19.5 17h.5a1 1 0 0 0 1-1 3 3 0 0 0-3-3h-1m0-3.05a2.5 2.5 0 1 0-2-4.45m.5 13.5h-7a1 1 0 0 1-1-1 3 3 0 0 1 3-3h3a3 3 0 0 1 3 3 1 1 0 0 1-1 1Zm-1-9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"/>
                     </svg>
                     {places}
