@@ -95,52 +95,6 @@ const Page = () => {
 
     const resetFilters = () => {
         setFilteredCards(originalCards);
-
-        setFilteredCards((prevFilteredCards) => {
-
-            const newFilteredCards = originalCards.filter((card) => {
-                let isValid = true;
-
-                if (filters.locations.length > 0 && !filters.locations.includes(card.attributes.location)) {
-                    isValid = false;
-                }
-
-                if (filters.participants && parseInt(filters.participants) !== 0 && card.attributes.attendant_limit < parseInt(filters.participants)) {
-                    isValid = false;
-                }
-
-                if (filters.duration && !card.attributes.workshop.data.attributes.tags.data.some(tag => tag.attributes.label === filters.duration)) {
-                    isValid = false;
-                }
-
-                // if (filters.dateRange.startDate && filters.dateRange.endDate) {
-                //     const cardStartDate = new Date(card.attributes.visibility_date);
-                //     const cardEndDate = new Date(card.attributes.registration_limit_date);
-                //     const startDate = new Date(filters.dateRange.startDate);
-                //     const endDate = new Date(filters.dateRange.endDate);
-                //     if (cardStartDate < startDate || cardEndDate > endDate) {
-                //         isValid = false;
-                //     }
-                // }
-
-                if (filters.tags.length > 0) {
-                    const cardTags = card.attributes.workshop.data.attributes.tags.data.map(tag => tag.attributes.label.toLowerCase());
-                    const filterTags = filters.tags.map(tag => tag.toLowerCase());
-                    if (!filterTags.some(tag => cardTags.includes(tag))) {
-                        isValid = false;
-                    }
-                }
-
-                return isValid;
-            });
-
-            console.log("Filtered cards:", newFilteredCards);
-            return newFilteredCards;
-        });
-    };
-
-    const resetFilters = () => {
-        setFilteredCards(originalCards);
     };
 
     return (
