@@ -38,9 +38,11 @@ const RangeDatePicker = ({ startDate, endDate, onChange }) => {
                     onChange={handleStartDateChange}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Select date start"
+                    style={{ backgroundColor: '#050505', border: "1px solid #AD6F3D", color: "#F1ECE9" }}
+
                 />
             </div>
-            <label htmlFor="dateRange" className="block text-sm font-medium text-gray-600 my-2">Jusqu'à</label>
+            <label htmlFor="dateRange" className="block text-sm font-medium  my-2" style={{ color: '#F1ECE9' }}>Jusqu'à</label>
             <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -54,6 +56,7 @@ const RangeDatePicker = ({ startDate, endDate, onChange }) => {
                     onChange={handleEndDateChange}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Select date end"
+                    style={{ backgroundColor: '#050505', border: "1px solid #AD6F3D", color: "#F1ECE9" }}
                 />
             </div>
         </div>
