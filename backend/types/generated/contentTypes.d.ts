@@ -915,18 +915,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    buttonLink: Attribute.String;
     subtitle: Attribute.String;
-    subtext: Attribute.String;
-    contentTitle: Attribute.String;
-    imgLeftSrc: Attribute.String;
-    textRight: Attribute.Text;
-    imgRightSrc: Attribute.String;
+    imgRight: Attribute.Media;
+    titleLeft: Attribute.String;
     textLeft: Attribute.Text;
-    bannerTitle: Attribute.String;
-    bannerButtonLink: Attribute.String;
-    bannerSubtitle: Attribute.Text;
-    heroImg: Attribute.Media;
+    titleRight: Attribute.String;
+    textRight: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
