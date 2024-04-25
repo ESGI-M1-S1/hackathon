@@ -7,55 +7,55 @@ const cardsData = [
     {
         title: 'Card 1',
         description: 'Description 1',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     },
     {
         title: 'Card 2',
         description: 'Description 2',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     },
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     }
     ,
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     }
     ,
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     },
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     },
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     },
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     },
     {
         title: 'Card 3',
         description: 'Description 3',
-        imgSrc: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg'
     }
 ];
 
 const Page = () => {
     return (
-        <div className="flex flex-col items-center bg-black pb-3">
+        <div className="flex flex-col items-center bg-black pb-3 pt-3">
             <h1 className="text-3xl font-bold mb-4 mx-6 text-brownText">Participer aux ateliers</h1>
             <p className="text-lg mb-4 mx-6 text-brownText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, repudiandae necessitatibus</p>
             <div className="flex flex-wrap justify-center gap-6">
