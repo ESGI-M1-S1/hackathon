@@ -824,6 +824,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     singularName: 'event';
     pluralName: 'events';
     displayName: 'Event';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -846,6 +847,11 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'api::event.event',
       'oneToMany',
       'api::registration.registration'
+    >;
+    ressources: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::ressource.ressource'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
