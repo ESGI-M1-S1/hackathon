@@ -34,8 +34,9 @@ const Page = ({
     const formData = new FormData(form);
     handleLogin(
       formData.get("email") as string,
-      formData.get("password") as string
+      formData.get("password") as string,
     );
+    router.push("http://localhost:1337/admin");
   };
 
   return (
