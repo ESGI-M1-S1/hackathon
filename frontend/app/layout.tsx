@@ -35,34 +35,36 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="fr">
         <body className={inter.className}>
-          <Navbar fluid className="bg-black border-b border-brown">
-            <div className={"flex items-center gap-8"}>
-              <NavbarBrand as={Link} href="/">
-                <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
-                  <Image
-                    src="/wineLogo.png"
-                    alt="Wine logo"
-                    fill
-                    className=""
-                  />
-                </div>
-                <span className="self-center whitespace-nowrap text-xl text-brown font-semibold dark:text-white">
-                  Et Si Le Vin ?
-                </span>
-              </NavbarBrand>
-              <NavbarCollapse className="!text-brown">
-                <Navlink href="/workshop">Ateliers</Navlink>
-                <Navlink href="/about">A propos</Navlink>
-                <Navlink href="/resources">Ressources</Navlink>
-              </NavbarCollapse>
-            </div>
-            <div className="flex">
-              <Button className="bg-brown rounded-none text-white">
-                Participer à un atelier
-              </Button>
-              <NavbarToggle />
-            </div>
-          </Navbar>
+          <div className="bg-black border-b border-brown">
+            <Navbar fluid className="bg-black mx-40">
+              <div className={"flex items-center gap-8"}>
+                <NavbarBrand as={Link} href="/">
+                  <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
+                    <Image
+                      src="/wineLogo.png"
+                      alt="Wine logo"
+                      fill
+                      className=""
+                    />
+                  </div>
+                  <span className="self-center whitespace-nowrap text-xl text-brown font-semibold dark:text-white">
+                    Et Si Le Vin ?
+                  </span>
+                </NavbarBrand>
+                <NavbarCollapse className="!text-brown">
+                  <Navlink href="/workshop">Ateliers</Navlink>
+                  <Navlink href="/about">A propos</Navlink>
+                  <Navlink href="/resources">Ressources</Navlink>
+                </NavbarCollapse>
+              </div>
+              <div className="flex">
+                <Button className="bg-brown rounded-none text-white">
+                  Participer à un atelier
+                </Button>
+                <NavbarToggle />
+              </div>
+            </Navbar>
+          </div>
           <>{children}</>
           <Footer
             container
