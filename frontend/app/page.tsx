@@ -30,7 +30,7 @@ export default async function Home() {
   return (
     <main className={"bg-black text-white"}>
       <section
-        className={`bg-center bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply sepia`}
+        className={`px-2 bg-center bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply sepia`}
         style={{
           backgroundImage: heroImg?.url
             ? `url(http://localhost:1337${heroImg.url})`
@@ -46,8 +46,8 @@ export default async function Home() {
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-screen-lg flex items-center min-h-[250px] pt-32 pb-12 -mt-52 gap-12">
-        <div className={"relative flex-1 h-[520px]"}>
+      <section className="px-2 mx-auto max-w-screen-lg flex flex-col md:flex-row gap-12 items-center min-h-[250px] pb-12 md:pt-40 md:-mt-52">
+        <div className={"relative h-[250px] w-full md:flex-1 md:h-[520px]"}>
           <Image
             src={
               imgRight.url ??
@@ -61,7 +61,7 @@ export default async function Home() {
         <div className={"flex-1 flex flex-col gap-8"}>
           <h2
             className={
-              "text-4xl mb-4 relative  before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
             }
           >
             {titleRight ?? "Nos Ateliers"}
@@ -72,7 +72,7 @@ export default async function Home() {
           </p>
         </div>
       </section>
-      <section className={"max-w-screen-lg mx-auto flex flex-col gap-8"}>
+      <section className={"px-2 max-w-screen-lg mx-auto flex flex-col gap-8"}>
         <h2
           className={
             "text-4xl mb-4 relative  before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
@@ -80,7 +80,7 @@ export default async function Home() {
         >
           Les derniers événements
         </h2>
-        <ul className={"flex gap-6"}>
+        <ul className={"flex gap-6 overflow-x-scroll"}>
           {[0, 0, 0].map((_, index) => (
             <li key={index}>
               <Card
@@ -117,12 +117,14 @@ export default async function Home() {
         </ul>
       </section>
       <section
-        className={"mx-auto max-w-screen-lg flex gap-12 py-16 items-center"}
+        className={
+          "px-2 mx-auto max-w-screen-lg flex flex-col md:flex-row gap-12 py-16 items-center w-full"
+        }
       >
-        <div className={"flex-1 flex flex-col gap-8 pr-5"}>
+        <div className={"flex-1 flex flex-col gap-8 md:pr-5"}>
           <h2
             className={
-              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4 whitespace-nowrap"
             }
           >
             {titleLeft ?? "Des découvertes"}
@@ -132,8 +134,8 @@ export default async function Home() {
               "Je vous invite à une odyssée des sens où chaque goutte de vin raconte le  récit d'un terroir, d'un vigneron, d'une tradition. Ces ateliers de  dégustation sont conçus pour éduquer le palais et illuminer l'esprit,  révélant les secrets enfouis dans les vignobles les plus renommés et les pépites méconnues."}
           </p>
         </div>
-        <div className={"relative flex-1 aspect-video transform sepia"}>
-          <div className={"absolute top-0 right-0 left-1/4 bottom-1/4 "}>
+        <div className={"relative flex-1 aspect-video sepia w-full"}>
+          <div className={"hidden md:block h-3/4 w-3/4 top-0 right-0 absolute"}>
             <Image
               src={
                 imgRight.url ??
@@ -145,7 +147,7 @@ export default async function Home() {
           </div>
           <div
             className={
-              "absolute bottom-0 left-0 right-1/4 top-1/4 border-[12px] border-black"
+              "absolute w-full h-full md:h-3/4 md:w-3/4 md:bottom-0 md:left-0 border-[12px] aspect-video border-black"
             }
           >
             <Image
@@ -155,20 +157,21 @@ export default async function Home() {
               }
               alt={"bouteilles de vin"}
               fill
+              className={"object-cover"}
             />
           </div>
         </div>
       </section>
-      <section className={"max-w-screen-lg mx-auto pb-16"}>
-        <div className={"w-[500px] mx-auto flex flex-col gap-4"}>
+      <section className={"px-2 max-w-screen-lg mx-auto pb-16"}>
+        <div className={"max-w-[500px] mx-auto flex flex-col gap-4"}>
           <h2
             className={
-              "text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "md:text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
             }
           >
             Restez informés
           </h2>
-          <p className={"mx-auto underline"}>
+          <p className={"mx-auto"}>
             Abonnez-vous à notre newsletter pour ne rien manquer de
             l&apos;actualité vinicole et des prochains ateliers !
           </p>
