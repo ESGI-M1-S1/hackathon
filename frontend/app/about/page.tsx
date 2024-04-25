@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import Button from "../components/Button";
+import InputField from "../components/Input";
 
 export default function about() {
   return (
@@ -16,6 +18,8 @@ export default function about() {
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation
       </p>
+      <Button />
+      <InputField />
     </div>
   );
 }

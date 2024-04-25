@@ -10,6 +10,9 @@ const config: Config = {
   ],
   plugins: [flowbite.plugin()],
   theme: {
+    fontFamily: {
+      Amethysta: ["Amethysta", "serif"],
+    },
     colors: {
       black: "#050505",
       brownText: "#DBBCA4",
