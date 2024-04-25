@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Event"
+    "displayName": "Event",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -46,6 +47,11 @@
       "relation": "oneToMany",
       "target": "api::registration.registration",
       "mappedBy": "event"
+    },
+    "ressources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ressource.ressource"
     }
   }
 }
