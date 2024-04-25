@@ -15,40 +15,10 @@
     "title": {
       "type": "string"
     },
-    "buttonLink": {
-      "type": "string"
-    },
     "subtitle": {
       "type": "string"
     },
-    "subtext": {
-      "type": "string"
-    },
-    "contentTitle": {
-      "type": "string"
-    },
-    "imgLeftSrc": {
-      "type": "string"
-    },
-    "textRight": {
-      "type": "text"
-    },
-    "imgRightSrc": {
-      "type": "string"
-    },
-    "textLeft": {
-      "type": "text"
-    },
-    "bannerTitle": {
-      "type": "string"
-    },
-    "bannerButtonLink": {
-      "type": "string"
-    },
-    "bannerSubtitle": {
-      "type": "text"
-    },
-    "heroImg": {
+    "imgRight": {
       "allowedTypes": [
         "images",
         "files",
@@ -57,6 +27,18 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "titleLeft": {
+      "type": "string"
+    },
+    "textLeft": {
+      "type": "text"
+    },
+    "titleRight": {
+      "type": "string"
+    },
+    "textRight": {
+      "type": "text"
     }
   }
 }
