@@ -36,7 +36,7 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="fr">
         <body className={inter.className}>
-          <Navbar fluid className="bg-black border-b-2 border-brownText">
+          <Navbar fluid className="bg-black border-b border-brown">
             <div className={"flex items-center gap-8"}>
               <NavbarBrand as={Link} href="/">
                 <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
@@ -68,7 +68,7 @@ export default function RootLayout({
           <>{children}</>
           <Footer
             container
-            className="border-t-2 border-t-brown rounded-none bg-black pt-12"
+            className="border-t border-t-brown rounded-none bg-black pt-12"
           >
             <div className="w-3/6 flex flex-col items-center">
               <FooterBrand
