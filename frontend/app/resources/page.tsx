@@ -4,10 +4,10 @@ import Image from "next/image";
 
 export default function ressources() {
   return (
-    <>
+    <div className="my-10">
       <div className="flex flex-col justify-center items-center">
-        <h1>Ressources</h1>
-        <p>
+        <h1 className="text-7xl mb-3.5">Ressources</h1>
+        <p className="mb-7 text-center px-56 text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -75,6 +75,6 @@ export default function ressources() {
           </p>
         </Card>
       </div>
-    </>
+    </div>
   );
 }
