@@ -51,15 +51,13 @@ export default function RootLayout({
                 </span>
               </NavbarBrand>
               <NavbarCollapse className="!text-brown">
-                <Navlink href="/">Accueil</Navlink>
-                <Navlink href="/about">A propos</Navlink>
                 <Navlink href="/workshop">Ateliers</Navlink>
-                <Navlink href="/contact">Contact</Navlink>
+                <Navlink href="/about">A propos</Navlink>
                 <Navlink href="/resources">Ressources</Navlink>
               </NavbarCollapse>
             </div>
             <div className="flex">
-              <Button className="bg-brown text-white">
+              <Button className="bg-brown rounded-none text-white">
                 Participer à un atelier
               </Button>
               <NavbarToggle />
