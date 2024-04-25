@@ -1,9 +1,10 @@
+"use client"
 import React, { useState } from 'react';
 import DateRangePicker from "@/components/ui/DateRangePicker";
 
 const FilterMenu = ({ onFilterChange }) => {
     const [filters, setFilters] = useState({
-        location: '',
+        locations: [],
         participants: '',
         dateRange: {
             startDate: new Date(),
@@ -56,6 +57,27 @@ const FilterMenu = ({ onFilterChange }) => {
         onFilterChange(updatedFilters);
     };
 
+    const handleTagClick = (selectedTag) => {
+        const updatedFilters = {
+            ...filters,
+            tags: [...filters.tags, selectedTag],
+            tag: ''
+        };
+
+        setFilters(updatedFilters);
+        onFilterChange(updatedFilters);
+    };
+
+    const handleTagRemove = (tagToRemove) => {
+        const updatedFilters = {
+            ...filters,
+            tags: filters.tags.filter(tag => tag !== tagToRemove)
+        };
+
+        setFilters(updatedFilters);
+        onFilterChange(updatedFilters);
+    };
+
     const handleDurationChange = (e) => {
         const { value } = e.target;
         const updatedFilters = {
@@ -67,23 +89,19 @@ const FilterMenu = ({ onFilterChange }) => {
         onFilterChange(updatedFilters);
     };
 
-    const handleTagClick = (selectedTag) => {
-        if (!filters.tags.includes(selectedTag)) {
-            const updatedFilters = {
-                ...filters,
-                tags: [...filters.tags, selectedTag],
-                tag: ''
-            };
+    const handleLocationChange = (e) => {
+        const { value, checked } = e.target;
+        let updatedLocations = [...filters.locations];
 
-            setFilters(updatedFilters);
-            onFilterChange(updatedFilters);
+        if (checked && !updatedLocations.includes(value)) {
+            updatedLocations.push(value);
+        } else {
+            updatedLocations = updatedLocations.filter(loc => loc !== value);
         }
-    };
 
-    const handleTagRemove = (tagToRemove) => {
         const updatedFilters = {
             ...filters,
-            tags: filters.tags.filter(tag => tag !== tagToRemove)
+            locations: updatedLocations
         };
 
         setFilters(updatedFilters);
@@ -99,22 +117,24 @@ const FilterMenu = ({ onFilterChange }) => {
         <div className="sticky left-0 top-0 h-screen w-[22rem] bg-gray-200 p-4 shadow-lg z-20 overflow-y-auto">
             <h3 className="mb-4 text-center font-extrabold">Filtres</h3>
             <div className="mb-4">
-                <label htmlFor="location" className="block text-sm font-medium text-gray-600">Location:</label>
-                <select
-                    id="location"
-                    name="location"
-                    value={filters.location}
-                    defaultValue={""}
-                    onChange={handleInputChange}
-                    className="mt-1 p-2 w-full border rounded-md"
-                >
-                    <option value="" disabled hidden>Select</option>
-                    <option value="idrac">IDRAC</option>
-                    <option value="sciencesu">Sciences U</option>
-                </select>
+                <label className="block text-sm font-medium text-gray-600">Localisation :</label>
+                {['Idrac', 'Sciences U'].map((location, index) => (
+                    <div key={index} className="flex items-center mr-4">
+                        <input
+                            id={location}
+                            type="checkbox"
+                            name="locations"
+                            value={location}
+                            checked={filters.locations.includes(location)}
+                            onChange={handleLocationChange}
+                            className="mr-2 my-2"
+                        />
+                        <label htmlFor={location} className="text-sm text-gray-600">{location}</label>
+                    </div>
+                ))}
             </div>
             <div className="mb-4">
-                <label htmlFor="participants" className="block text-sm font-medium text-gray-600">Participants:</label>
+                <label htmlFor="participants" className="block text-sm font-medium text-gray-600">Places disponibles :</label>
                 <input
                     id="participants"
                     name="participants"
@@ -132,23 +152,6 @@ const FilterMenu = ({ onFilterChange }) => {
                     onChange={handleDateRangeChange}
                     className="mt-1 p-2 w-full border rounded-md"
                 />
-            </div>
-            <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-600">Durée:</label>
-                {durationOptions.map((option, index) => (
-                    <div key={index} className="flex items-center mr-4">
-                        <input
-                            id={option.value}
-                            type="radio"
-                            name="duration"
-                            value={option.value}
-                            checked={filters.duration === option.value}
-                            onChange={handleDurationChange}
-                            className="mr-2 my-2"
-                        />
-                        <label htmlFor={option.value} className="text-sm text-gray-600">{option.label}</label>
-                    </div>
-                ))}
             </div>
             <div className="mb-4">
                 <label htmlFor="tag" className="block text-sm font-medium text-gray-600">Tag:</label>
