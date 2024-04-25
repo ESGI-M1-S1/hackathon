@@ -36,21 +36,22 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="fr">
         <body className={inter.className}>
-          <Navbar fluid rounded>
+          <Navbar fluid className="bg-black border-b-2 border-brownText">
             <div className={"flex items-center gap-8"}>
-              <NavbarBrand as={Link} href="https://flowbite-react.com">
+              <NavbarBrand as={Link} href="/">
                 <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
                   <Image
-                    src="https://flowbite.s3.amazonaws.com/brand/logo-light/mark/flowbite-logo.svg"
-                    alt="Flowbite React Logo"
+                    src="/wineLogo.png"
+                    alt="Wine logo"
                     fill
+                    className=""
                   />
                 </div>
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                  Wine&Co
+                <span className="self-center whitespace-nowrap text-xl text-brown font-semibold dark:text-white">
+                  Et Si Le Vin ?
                 </span>
               </NavbarBrand>
-              <NavbarCollapse>
+              <NavbarCollapse className="!text-brown">
                 <Navlink href="/">Accueil</Navlink>
                 <Navlink href="/about">A propos</Navlink>
                 <Navlink href="/contact">Contact</Navlink>
@@ -58,7 +59,9 @@ export default function RootLayout({
               </NavbarCollapse>
             </div>
             <div className="flex">
-              <Button className={"hidden md:block"}>Get started</Button>
+              <Button className="bg-brown text-white">
+                Participer à un atelier
+              </Button>
               <NavbarToggle />
             </div>
           </Navbar>
