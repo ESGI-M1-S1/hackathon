@@ -10,8 +10,10 @@ const config: Config = {
   ],
   plugins: [flowbite.plugin()],
   theme: {
-    textColor: {
-      primaryText: "#AF9B8B",
+    colors: {
+      black: "#050505",
+      brown: "#AF9B8B",
+      white: "#F1ECE9",
     },
   },
 };
