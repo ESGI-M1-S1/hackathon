@@ -6,6 +6,8 @@ import FilterMenu from '@/components/FilterMenu';
 async function getWorkshops() {
     const response = await fetch("http://localhost:1337/api/events?populate[workshop][populate][0]=tags");
     const data = await response.json();
+    console.log(data)
+
     return data.data;
 }
 import React, { useEffect, useState } from 'react';
@@ -51,12 +53,16 @@ const Page = () => {
         console.log('Filters changed:', filters);
 
         setFilteredCards((prevFilteredCards) => {
-
             const newFilteredCards = originalCards.filter((card) => {
                 let isValid = true;
+                console.log(card, "card");
 
-                if (filters.locations.length > 0 && !filters.locations.includes(card.attributes.location)) {
-                    isValid = false;
+                if (filters.locations.length > 0) {
+                    const cardLocations = Array.isArray(card.attributes.location) ? card.attributes.location.map(tag => tag.toLowerCase()) : [card.attributes.location.toLowerCase()];
+                    const filterLocations = filters.locations.map(tag => tag.toLowerCase());
+                    if (!filterLocations.some(tag => cardLocations.includes(tag))) {
+                        isValid = false;
+                    }
                 }
 
                 if (filters.participants && parseInt(filters.participants) !== 0 && card.attributes.attendant_limit < parseInt(filters.participants)) {
@@ -65,16 +71,6 @@ const Page = () => {
 
                 if (filters.duration && !card.attributes.workshop.data.attributes.tags.data.some(tag => tag.attributes.label === filters.duration)) {
                     isValid = false;
-                }
-
-                if (filters.dateRange.startDate && filters.dateRange.endDate) {
-                    const cardStartDate = new Date(card.attributes.visibility_date);
-                    const cardEndDate = new Date(card.attributes.registration_limit_date);
-                    const startDate = new Date(filters.dateRange.startDate);
-                    const endDate = new Date(filters.dateRange.endDate);
-                    if (cardStartDate < startDate || cardEndDate > endDate) {
-                        isValid = false;
-                    }
                 }
 
                 if (filters.tags.length > 0) {
@@ -92,7 +88,6 @@ const Page = () => {
             return newFilteredCards;
         });
     };
-
     const resetFilters = () => {
         setFilteredCards(originalCards);
     };
