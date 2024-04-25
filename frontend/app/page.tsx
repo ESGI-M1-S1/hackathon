@@ -12,6 +12,8 @@ async function getData() {
 
   return {
     ...data.attributes,
+    heroImg: { url: data?.attributes?.heroImg?.data?.attributes?.url },
+    imgRight: { url: data?.attributes?.imgRight?.data?.attributes?.url },
   };
 }
 
@@ -28,7 +30,7 @@ export default async function Home() {
   } = await getData();
 
   return (
-    <main className={"bg-black text-white"}>
+    <main className={"bg-black text-brownText"}>
       <section
         className={`px-2 bg-center bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply sepia`}
         style={{
@@ -50,8 +52,9 @@ export default async function Home() {
         <div className={"relative h-[250px] w-full md:flex-1 md:h-[520px]"}>
           <Image
             src={
-              imgRight.url ??
-              "https://www.seekpng.com/png/full/1011-10116121_try-glass-bottle.png"
+              imgRight.url
+                ? `http://localhost:1337${imgRight.url}`
+                : "https://www.seekpng.com/png/full/1011-10116121_try-glass-bottle.png"
             }
             alt={"bouteilles de vin"}
             fill
@@ -61,7 +64,7 @@ export default async function Home() {
         <div className={"flex-1 flex flex-col gap-8"}>
           <h2
             className={
-              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4"
             }
           >
             {titleRight ?? "Nos Ateliers"}
@@ -75,7 +78,7 @@ export default async function Home() {
       <section className={"px-2 max-w-screen-lg mx-auto flex flex-col gap-8"}>
         <h2
           className={
-            "text-4xl mb-4 relative  before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+            "text-4xl mb-4 relative  before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4"
           }
         >
           Les derniers événements
@@ -124,7 +127,7 @@ export default async function Home() {
         <div className={"flex-1 flex flex-col gap-8 md:pr-5"}>
           <h2
             className={
-              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4 whitespace-nowrap"
+              "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4 whitespace-nowrap"
             }
           >
             {titleLeft ?? "Des découvertes"}
@@ -166,7 +169,7 @@ export default async function Home() {
         <div className={"max-w-[500px] mx-auto flex flex-col gap-4"}>
           <h2
             className={
-              "md:text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "md:text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4"
             }
           >
             Restez informés
@@ -179,7 +182,7 @@ export default async function Home() {
             <input
               type="email"
               placeholder="Votre adresse email"
-              className={"p-2 flex-1 w-full bg-black text-white"}
+              className={"p-2 flex-1 w-full bg-black text-brownText"}
             />
             <Button>Je m&apos;abonne</Button>
           </form>
