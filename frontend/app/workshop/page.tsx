@@ -44,15 +44,15 @@ const Page = () => {
                     isValid = false;
                 }
 
-                // if (filters.dateRange.startDate && filters.dateRange.endDate) {
-                //     const cardStartDate = new Date(card.attributes.visibility_date);
-                //     const cardEndDate = new Date(card.attributes.registration_limit_date);
-                //     const startDate = new Date(filters.dateRange.startDate);
-                //     const endDate = new Date(filters.dateRange.endDate);
-                //     if (cardStartDate < startDate || cardEndDate > endDate) {
-                //         isValid = false;
-                //     }
-                // }
+                if (filters.dateRange.startDate && filters.dateRange.endDate) {
+                    const cardStartDate = new Date(card.attributes.visibility_date);
+                    const cardEndDate = new Date(card.attributes.registration_limit_date);
+                    const startDate = new Date(filters.dateRange.startDate);
+                    const endDate = new Date(filters.dateRange.endDate);
+                    if (cardStartDate < startDate || cardEndDate > endDate) {
+                        isValid = false;
+                    }
+                }
 
                 if (filters.tags.length > 0) {
                     const cardTags = card.attributes.workshop.data.attributes.tags.data.map(tag => tag.attributes.label.toLowerCase());
