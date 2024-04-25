@@ -9,5 +9,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   plugins: [flowbite.plugin()],
+  theme: {
+    colors: {
+      black: "#050505",
+      brown: "#AF9B8B",
+      white: "#F1ECE9",
+    },
+  },
 };
 export default config;
