@@ -57,7 +57,7 @@ export default function RootLayout({
               </NavbarCollapse>
             </div>
             <div className="flex">
-              <Button className="bg-brown text-white">
+              <Button className="bg-brown rounded-none text-white">
                 Participer à un atelier
               </Button>
               <NavbarToggle />
