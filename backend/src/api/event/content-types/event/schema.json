@@ -50,14 +50,20 @@
       "type": "text"
     },
     "event_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "workshop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::workshop.workshop"
     }
   }
 }
