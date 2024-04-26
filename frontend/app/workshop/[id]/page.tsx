@@ -71,7 +71,7 @@ async function Page({ params }: { params: { id: string } }) {
           });
       };*/
   return (
-    <main className={"bg-black text-white"}>
+    <main className={"bg-blackCustom text-whiteCustom"}>
       <section
         className={
           "py-12 flex flex-col md:flex-row max-w-screen-lg mx-auto items-center"
@@ -184,7 +184,7 @@ async function Page({ params }: { params: { id: string } }) {
                 href={mediaUrl}
                 key={ressource.id}
                 target={"_blank"}
-                className="w-full bg-brown text-white py-3 px-10 hover:bg-brown duration-100 hover:text-white flex justify-center capitalize"
+                className="w-full bg-brown text-whiteCustom py-3 px-10 hover:bg-brown duration-100 hover:text-whiteCustom flex justify-center capitalize"
               >
                 {ressource.password && (
                   <svg
@@ -211,7 +211,7 @@ async function Page({ params }: { params: { id: string } }) {
         <article className={"flex flex-col basis-1/2 gap-5 px-4"}>
           <h2
             className={
-              "md:text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "md:text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
             }
           >
             Participez à l&apos;atelier

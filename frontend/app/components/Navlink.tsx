@@ -8,7 +8,7 @@ const Navlink = ({ href, children }: PropsWithChildren<{ href: string }>) => {
   const pathname = usePathname();
   return (
     <NavbarLink
-      className={`text-brown hover:text-white relative ${pathname === href ? "text-brownText before:absolute before:inset-x-0 before:-bottom-0.5 before:h-0.5 before:bg-brownText" : ""}`}
+      className={`text-brown hover:text-whiteCustom relative ${pathname === href ? "text-brownText before:absolute before:inset-x-0 before:-bottom-0.5 before:h-0.5 before:bg-brownText" : ""}`}
       as={Link}
       href={href}
     >

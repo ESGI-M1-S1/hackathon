@@ -28,7 +28,7 @@ export default function ressources() {
             />
           )}
         >
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-whiteCustom">
             Noteworthy technology acquisitions 2021
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
@@ -47,7 +47,7 @@ export default function ressources() {
             />
           )}
         >
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-whiteCustom">
             Noteworthy technology acquisitions 2021
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
@@ -66,7 +66,7 @@ export default function ressources() {
             />
           )}
         >
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-whiteCustom">
             Noteworthy technology acquisitions 2021
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
