@@ -119,7 +119,7 @@ const FilterMenu = ({ onFilterChange }) => {
     );
 
     return (
-        <div className="sticky left-0 top-0 h-screen w-[22rem] p-4 shadow-lg z-20 overflow-y-auto" style={{ backgroundColor: '#050505' }}>
+        <div className="sticky left-0 top-0 h-screen w-[22rem] p-4 shadow-lg z-20 overflow-y-auto" style={{ backgroundColor: '#050505', borderRight: '1px solid #AD6F3D' }}>
             <h3 className="mb-4 text-center font-extrabold">Filtres</h3>
 
             <div className="mb-4">
