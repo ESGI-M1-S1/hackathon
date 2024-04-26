@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 export const Newsletter = () => {
+  const [subscribed, setSubscribed] = useState(false);
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const email = e.target[0].value;
@@ -10,8 +11,8 @@ export const Newsletter = () => {
       .post("http://localhost:1337/api/newsletters", {
         data: { email },
       })
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        setSubscribed(true);
       })
       .catch((error) => {
         console.error(error);
@@ -33,6 +34,9 @@ export const Newsletter = () => {
       >
         Je m&apos;abonne
       </button>
+      {subscribed && (
+        <p className={"text-whiteCustom"}>Merci pour votre abonnement</p>
+      )}
     </form>
   );
 };
