@@ -12,6 +12,7 @@ interface CardProps {
     price?: string;
     isPrivate?: boolean;
     tags?: any;
+    password?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,14 +24,21 @@ const Card: React.FC<CardProps> = ({
     imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/1920_St_Johann_Sepia_Aquarell.jpg/1200px-1920_St_Johann_Sepia_Aquarell.jpg',
     price = '35',
     isPrivate = true,
-    tags = []
+    tags = [],
+    password = ""
 }) => {
+    console.log("password : ", password)
+    if (password && password.length > 0) {
+        isPrivate = true;
+    } else {
+        isPrivate = false;
+    }
     return (
         <div className="max-w-xs bg-black border border-brown border-2 shadow dark:bg-gray-800 dark:border-yellow-700 p-3">
 
             <div>
                 {isPrivate == true && (
-                    <span className="text-brownText px-2 py-1 bg-brown flex w-fit">
+                    <span className="text-brownText px-2 py-1 bg-brown flex w-fit absolute z-10">
                         <svg className="w-6 h-6 text-brownText dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v3m-3-6V7a3 3 0 1 1 6 0v4m-8 0h10a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z" />
                         </svg>
@@ -75,11 +83,11 @@ const Card: React.FC<CardProps> = ({
                     </svg>
                     {price + ' €'}
                 </div>
-                <div className="mb-3 flex flex-wrap">
+                {/* <div className="mb-3 flex flex-wrap">
                     {tags.map((tag, index) => (
                         <span key={index} className="inline-block bg-brown rounded-full px-3 py-1 text-sm  text-white mr-2 mb-2">{tag.attributes.label}</span>
                     ))}
-                </div>
+                </div> */}
 
                 <ul className="flex justify-center">
                     <Button text='Prendre ma place' link={href}></Button>
