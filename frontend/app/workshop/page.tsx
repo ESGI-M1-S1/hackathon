@@ -1,11 +1,14 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Card from '../../components/ui/card'
+import Card from '../../components/ui/card'
 import FilterMenu from '@/components/FilterMenu';
 
 async function getWorkshops() {
     const response = await fetch("http://localhost:1337/api/events?populate[workshop][populate][0]=preview_img&populate[workshop][populate][1]=tags");
+    const response = await fetch("http://localhost:1337/api/events?populate[workshop][populate][0]=preview_img&populate[workshop][populate][1]=tags");
     const data = await response.json();
+    console.log(data.data)
     console.log(data.data)
 
     return data.data;
@@ -22,6 +25,7 @@ const Page = () => {
             setOriginalCards(data);
             setFilteredCards(data);
             console.log("Initial data:", data);
+            console.log("Initial data:", data);
         }
 
         fetchData();
@@ -33,6 +37,7 @@ const Page = () => {
             const data = await getWorkshops();
             setOriginalCards(data);
             setFilteredCards(data);
+            console.log("Initial data:", data);
             console.log("Initial data:", data);
         }
 
@@ -75,6 +80,7 @@ const Page = () => {
             });
 
             console.log("Filtered cards:", filteredCards);
+            console.log("Filtered cards:", filteredCards);
             return newFilteredCards;
         });
     };
@@ -93,16 +99,22 @@ const Page = () => {
                             <span className="absolute bottom-0 left-0 w-32 h-1 bg-white"></span>
                         </h1>
                         <p className="w-2/3 text-lg mb-4 mx-6 items-left text-brownText">Pour vous inscrire à un atelier, veuillez sélectionner celui qui vous intéresse dans la liste ci-dessous. Notez que si l'atelier est marqué comme Privé, vous devrez saisir un mot de passe pour accéder à l'inscription. Assurez-vous d'avoir le mot de passe à disposition avant de procéder. </p>
-                        <div className="flex flex-wrap justify-center gap-6">
-                            {filteredCards.map((card, index) => (
-                                <Card key={index} href={`/workshop/${index + 1}`} password={card.attributes.password} tags={card.attributes.workshop.data.attributes.tags.data} title={card.attributes.name} places={card.attributes.attendant_limit} date={new Date(card.attributes.event_date).toLocaleDateString()} imageUrl={"http://localhost:1337" + card.attributes.workshop.data.attributes.preview_img.data.attributes.url} className='max-w-xs max-h-xs mx-6'></Card>
-                            ))}
+                        <div className="flex flex-col items-left bg-black pb-3  w-full pt-8 ">
+                            <h1 className="text-3xl mb-4 mx-6 text-left text-white relative pb-3">
+                                Participer aux ateliers
+                                <span className="absolute bottom-0 left-0 w-32 h-1 bg-white"></span>
+                            </h1>
+                            <p className="w-2/3 text-lg mb-4 mx-6 items-left text-brownText">Pour vous inscrire à un atelier, veuillez sélectionner celui qui vous intéresse dans la liste ci-dessous. Notez que si l'atelier est marqué comme Privé, vous devrez saisir un mot de passe pour accéder à l'inscription. Assurez-vous d'avoir le mot de passe à disposition avant de procéder. </p>
+                            <div className="flex flex-wrap justify-center gap-6">
+                                {filteredCards.map((card, index) => (
+                                    <Card key={index} href={`/workshop/${index + 1}`} password={card.attributes.password} tags={card.attributes.workshop.data.attributes.tags.data} title={card.attributes.name} places={card.attributes.attendant_limit} date={new Date(card.attributes.event_date).toLocaleDateString()} imageUrl={"http://localhost:1337" + card.attributes.workshop.data.attributes.preview_img.data.attributes.url} className='max-w-xs max-h-xs mx-6'></Card>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+            );
 };
 
-export default Page;
+            export default Page;
