@@ -95,7 +95,7 @@ const Page = () => {
                         <p className="w-2/3 text-lg mb-4 mx-6 items-left text-brownText">Pour vous inscrire à un atelier, veuillez sélectionner celui qui vous intéresse dans la liste ci-dessous. Notez que si l'atelier est marqué comme Privé, vous devrez saisir un mot de passe pour accéder à l'inscription. Assurez-vous d'avoir le mot de passe à disposition avant de procéder. </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             {filteredCards.map((card, index) => (
-                                <Card key={index} href={`/workshop/${index + 1}`} tags={card.attributes.workshop.data.attributes.tags.data} title={card.attributes.name} places={card.attributes.attendant_limit} date={new Date(card.attributes.event_date).toLocaleDateString()} imageUrl={"http://localhost:1337" + card.attributes.workshop.data.attributes.preview_img.data.attributes.url} className='max-w-xs max-h-xs mx-6'></Card>
+                                <Card key={index} href={`/workshop/${index + 1}`} password={card.attributes.password} tags={card.attributes.workshop.data.attributes.tags.data} title={card.attributes.name} places={card.attributes.attendant_limit} date={new Date(card.attributes.event_date).toLocaleDateString()} imageUrl={"http://localhost:1337" + card.attributes.workshop.data.attributes.preview_img.data.attributes.url} className='max-w-xs max-h-xs mx-6'></Card>
                             ))}
                         </div>
                     </div>
