@@ -848,6 +848,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'oneToMany',
       'api::ressource.ressource'
     >;
+    description: Attribute.Text;
+    event_img: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
