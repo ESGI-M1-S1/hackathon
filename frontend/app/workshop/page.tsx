@@ -87,12 +87,15 @@ const Page = () => {
             <div className="flex flex-col items-center w-full">
                 <div className="flex w-full">
                     <FilterMenu onFilterChange={handleFilterChange} onReset={resetFilters}></FilterMenu>
-                    <div className="flex flex-col items-center bg-black pb-3 pt-3 w-full">
-                        <h1 className="text-3xl font-bold mb-4 mx-6 text-brownText">Participer aux ateliers</h1>
-                        <p className="text-lg mb-4 mx-6 text-brownText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, repudiandae necessitatibus</p>
+                    <div className="flex flex-col items-left bg-black pb-3  w-full pt-8 ">
+                        <h1 className="text-3xl mb-4 mx-6 text-left text-white relative pb-3">
+                            Participer aux ateliers
+                            <span className="absolute bottom-0 left-0 w-32 h-1 bg-white"></span>
+                        </h1>
+                        <p className="w-2/3 text-lg mb-4 mx-6 items-left text-brownText">Pour vous inscrire à un atelier, veuillez sélectionner celui qui vous intéresse dans la liste ci-dessous. Notez que si l'atelier est marqué comme Privé, vous devrez saisir un mot de passe pour accéder à l'inscription. Assurez-vous d'avoir le mot de passe à disposition avant de procéder. </p>
                         <div className="flex flex-wrap justify-center gap-6">
                             {filteredCards.map((card, index) => (
-                                <Card key={index} tags={card.attributes.workshop.data.attributes.tags.data} title={card.attributes.name} places={card.attributes.attendant_limit} date={new Date(card.attributes.event_date).toLocaleDateString()} imageUrl={"http://localhost:1337" + card.attributes.workshop.data.attributes.preview_img.data.attributes.url} className='max-w-xs max-h-xs mx-6'></Card>
+                                <Card key={index} href={`/workshop/${index + 1}`} tags={card.attributes.workshop.data.attributes.tags.data} title={card.attributes.name} places={card.attributes.attendant_limit} date={new Date(card.attributes.event_date).toLocaleDateString()} imageUrl={"http://localhost:1337" + card.attributes.workshop.data.attributes.preview_img.data.attributes.url} className='max-w-xs max-h-xs mx-6'></Card>
                             ))}
                         </div>
                     </div>
