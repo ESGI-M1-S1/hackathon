@@ -29,12 +29,6 @@
         "audios"
       ]
     },
-    "events": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::event.event",
-      "mappedBy": "workshop"
-    },
     "tags": {
       "type": "relation",
       "relation": "oneToMany",

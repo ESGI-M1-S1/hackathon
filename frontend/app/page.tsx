@@ -1,6 +1,8 @@
 import { Button, Card } from "flowbite-react";
 import Image from "next/image";
 import { CookieModal } from "@/app/components/CookieModal";
+import React from "react";
+import { Newsletter } from "@/app/components/Newsletter";
 
 async function getData() {
   const res = await fetch("http://localhost:1337/api/homepage?populate=*");
@@ -33,21 +35,26 @@ export default async function Home() {
   return (
     <>
       <CookieModal />
-      <main className={"bg-black text-brownText"}>
+      <main className={"bg-blackCustom text-brownText"}>
         <section
-          className={`px-2 bg-center bg-cover bg-no-repeat bg-gray-700 bg-blend-multiply sepia`}
-          style={{
-            backgroundImage: heroImg?.url
-              ? `url(http://localhost:1337${heroImg.url})`
-              : `url(https://winegreenturtle.com/web/product/extra/small/202103/77006701313a86c2e44132440823c088.jpg)`,
-          }}
+          className={`text-whiteCustom px-2 relative bg-gradient-to-b from-black to-gray-900`}
         >
-          <div className="flex flex-col items-center gap-8 px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-32">
-            <h1 className="mb-4 text-4xl leading-none  md:text-5xl lg:text-6xl">
+          <Image
+            src={
+              heroImg?.url
+                ? `http://localhost:1337${heroImg.url}`
+                : `https://winegreenturtle.com/web/product/extra/small/202103/77006701313a86c2e44132440823c088.jpg`
+            }
+            alt={"hero"}
+            fill
+            className={"absolute inset-0 object-cover filter opacity-30"}
+          />
+          <div className="isolate flex flex-col items-center gap-8 px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-32">
+            <h1 className="mb-4 text-4xl leading-none  md:text-5xl lg:text-6xl drop-shadow-md">
               {title ?? "Et si le vin"}
             </h1>
             <p className={" text-xl"}>
-              {subtitle &&
+              {subtitle ??
                 "Entre tradition et passion : l'art de la dégustation"}
             </p>
           </div>
@@ -68,7 +75,7 @@ export default async function Home() {
           <div className={"flex-1 flex flex-col gap-8"}>
             <h2
               className={
-                "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4"
+                "text-4xl text-whiteCustom mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
               }
             >
               {titleRight ?? "Nos Ateliers"}
@@ -82,7 +89,7 @@ export default async function Home() {
         <section className={"px-2 max-w-screen-lg mx-auto flex flex-col gap-8"}>
           <h2
             className={
-              "text-4xl mb-4 relative  before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4"
+              "text-4xl mb-4 text-whiteCustom relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
             }
           >
             Les derniers événements
@@ -131,7 +138,7 @@ export default async function Home() {
           <div className={"flex-1 flex flex-col gap-8 md:pr-5"}>
             <h2
               className={
-                "text-4xl mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4 whitespace-nowrap"
+                "text-4xl mb-4 relative text-whiteCustom before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4 whitespace-nowrap"
               }
             >
               {titleLeft ?? "Des découvertes"}
@@ -175,7 +182,7 @@ export default async function Home() {
           <div className={"max-w-[500px] mx-auto flex flex-col gap-4"}>
             <h2
               className={
-                "md:text-center text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-brownText before:-bottom-4"
+                "md:text-center text-whiteCustom text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
               }
             >
               Restez informés
@@ -184,14 +191,7 @@ export default async function Home() {
               Abonnez-vous à notre newsletter pour ne rien manquer de
               l&apos;actualité vinicole et des prochains ateliers !
             </p>
-            <form className={"flex flex-col gap-4"}>
-              <input
-                type="email"
-                placeholder="Votre adresse email"
-                className={"p-2 flex-1 w-full bg-black text-brownText"}
-              />
-              <Button>Je m&apos;abonne</Button>
-            </form>
+            <Newsletter />
           </div>
         </section>
       </main>

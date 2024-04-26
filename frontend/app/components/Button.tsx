@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ text, link }) => {
       <a href={link}>
         <button
           type="button"
-          className="bg-brown text-white py-3 px-10 m-2 hover:bg-orange-300 duration-100 hover:text-white"
+          className="bg-brown text-whiteCustom py-3 px-10 m-2 hover:bg-orange-300 duration-100 hover:text-whiteCustom"
         >
           {text}
         </button>
