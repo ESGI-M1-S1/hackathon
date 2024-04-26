@@ -52,9 +52,9 @@ export default function RootLayout({
                   </span>
                 </NavbarBrand>
                 <NavbarCollapse className="!text-brown">
+                  <Navlink href="/">Accueil</Navlink>
                   <Navlink href="/workshop">Ateliers</Navlink>
                   <Navlink href="/about">A propos</Navlink>
-                  <Navlink href="/resources">Ressources</Navlink>
                 </NavbarCollapse>
               </div>
               <div className="flex">
@@ -85,9 +85,9 @@ export default function RootLayout({
               <FooterLinkGroup col className="text-white mr-60">
                 <FooterTitle title="Pages" className="text-white" />
                 <FooterLink href="/">Accueil</FooterLink>
+                <FooterLink href="/workshop">Atelier</FooterLink>
                 <FooterLink href="/about">A propos</FooterLink>
-                <FooterLink href="/contact">Contact</FooterLink>
-                <FooterLink href="/resources">Ressources</FooterLink>
+                <FooterLink href="/resources">Connexion</FooterLink>
               </FooterLinkGroup>
               <FooterLinkGroup col className="text-white">
                 <FooterTitle title="Mention légale" className="text-white" />
