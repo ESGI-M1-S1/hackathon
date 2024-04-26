@@ -87,7 +87,7 @@ export default function RootLayout({
                 <FooterLink href="/">Accueil</FooterLink>
                 <FooterLink href="/workshop">Atelier</FooterLink>
                 <FooterLink href="/about">A propos</FooterLink>
-                <FooterLink href="/resources">Connexion</FooterLink>
+                <FooterLink href="/login">Connexion</FooterLink>
               </FooterLinkGroup>
               <FooterLinkGroup col className="text-white">
                 <FooterTitle title="Mention légale" className="text-white" />
