@@ -850,6 +850,11 @@ export interface ApiEventEvent extends Schema.CollectionType {
     >;
     description: Attribute.Text;
     event_img: Attribute.Media;
+    workshop: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'api::workshop.workshop'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
