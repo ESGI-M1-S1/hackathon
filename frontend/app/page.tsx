@@ -35,9 +35,9 @@ export default async function Home() {
   return (
     <>
       <CookieModal />
-      <main className={"bg-black text-brownText"}>
+      <main className={"bg-blackCustom text-brownText"}>
         <section
-          className={`text-white px-2 relative bg-gradient-to-b from-black to-gray-900`}
+          className={`text-whiteCustom px-2 relative bg-gradient-to-b from-black to-gray-900`}
         >
           <Image
             src={
@@ -75,7 +75,7 @@ export default async function Home() {
           <div className={"flex-1 flex flex-col gap-8"}>
             <h2
               className={
-                "text-4xl text-white mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+                "text-4xl text-whiteCustom mb-4 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
               }
             >
               {titleRight ?? "Nos Ateliers"}
@@ -89,7 +89,7 @@ export default async function Home() {
         <section className={"px-2 max-w-screen-lg mx-auto flex flex-col gap-8"}>
           <h2
             className={
-              "text-4xl mb-4 text-white relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+              "text-4xl mb-4 text-whiteCustom relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
             }
           >
             Les derniers événements
@@ -138,7 +138,7 @@ export default async function Home() {
           <div className={"flex-1 flex flex-col gap-8 md:pr-5"}>
             <h2
               className={
-                "text-4xl mb-4 relative text-white before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4 whitespace-nowrap"
+                "text-4xl mb-4 relative text-whiteCustom before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4 whitespace-nowrap"
               }
             >
               {titleLeft ?? "Des découvertes"}
@@ -182,7 +182,7 @@ export default async function Home() {
           <div className={"max-w-[500px] mx-auto flex flex-col gap-4"}>
             <h2
               className={
-                "md:text-center text-white text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-white before:-bottom-4"
+                "md:text-center text-whiteCustom text-4xl mb-7 relative before:content-[''] before:absolute before:w-32 before:h-1 before:bg-whiteCustom before:-bottom-4"
               }
             >
               Restez informés

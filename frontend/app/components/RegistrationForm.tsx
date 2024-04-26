@@ -36,7 +36,7 @@ const RegistrationForm = () => {
           <InputField name={"password"} placeholder={"Mot de passe"} />
           <button
             type="submit"
-            className="w-full bg-brown text-white py-3 px-10 hover:bg-brown duration-100 hover:text-white"
+            className="w-full bg-brown text-whiteCustom py-3 px-10 hover:bg-brown duration-100 hover:text-whiteCustom"
           >
             S&apos;inscrire
           </button>
