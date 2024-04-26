@@ -2,7 +2,7 @@ import { Button, Card } from "flowbite-react";
 import Image from "next/image";
 import { CookieModal } from "@/app/components/CookieModal";
 import React from "react";
-import Newsletter from "@/app/components/Newsletter";
+import { Newsletter } from "@/app/components/Newsletter";
 
 async function getData() {
   const res = await fetch("http://localhost:1337/api/homepage?populate=*");
