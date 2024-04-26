@@ -831,11 +831,6 @@ export interface ApiEventEvent extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    workshop: Attribute.Relation<
-      'api::event.event',
-      'manyToOne',
-      'api::workshop.workshop'
-    >;
     attendant_limit: Attribute.Integer;
     location: Attribute.String;
     visibility_date: Attribute.DateTime;
@@ -939,6 +934,36 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
 }
 
+export interface ApiNewsletterNewsletter extends Schema.CollectionType {
+  collectionName: 'newsletters';
+  info: {
+    singularName: 'newsletter';
+    pluralName: 'newsletters';
+    displayName: 'Newsletter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -1017,11 +1042,6 @@ export interface ApiRegistrationRegistration extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    event: Attribute.Relation<
-      'api::registration.registration',
-      'manyToOne',
-      'api::event.event'
-    >;
     email: Attribute.Email;
     registration_state: Attribute.Enumeration<['pending', 'validated']>;
     createdAt: Attribute.DateTime;
@@ -1048,14 +1068,15 @@ export interface ApiRessourceRessource extends Schema.CollectionType {
     singularName: 'ressource';
     pluralName: 'ressources';
     displayName: 'Ressource';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    link: Attribute.String;
     password: Attribute.String;
+    media: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1148,11 +1169,6 @@ export interface ApiWorkshopWorkshop extends Schema.CollectionType {
     title: Attribute.String;
     content: Attribute.RichText;
     preview_img: Attribute.Media;
-    events: Attribute.Relation<
-      'api::workshop.workshop',
-      'oneToMany',
-      'api::event.event'
-    >;
     tags: Attribute.Relation<
       'api::workshop.workshop',
       'oneToMany',
@@ -1203,6 +1219,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::grape-variety.grape-variety': ApiGrapeVarietyGrapeVariety;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::product.product': ApiProductProduct;
       'api::region.region': ApiRegionRegion;
       'api::registration.registration': ApiRegistrationRegistration;

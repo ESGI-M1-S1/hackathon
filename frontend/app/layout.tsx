@@ -36,7 +36,7 @@ export default function RootLayout({
       <html lang="fr">
         <body className={inter.className}>
           <div className="bg-black border-b border-brown">
-            <Navbar fluid className="bg-black mx-40">
+            <Navbar fluid className="bg-black max-w-screen-lg mx-auto">
               <div className={"flex items-center gap-8"}>
                 <NavbarBrand as={Link} href="/">
                   <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
@@ -58,9 +58,12 @@ export default function RootLayout({
                 </NavbarCollapse>
               </div>
               <div className="flex">
-                <Button className="bg-brown rounded-none text-white">
+                <Link
+                  href={"/workshop"}
+                  className="px-4 py-2 bg-brown rounded-none text-white"
+                >
                   Participer à un atelier
-                </Button>
+                </Link>
                 <NavbarToggle />
               </div>
             </Navbar>

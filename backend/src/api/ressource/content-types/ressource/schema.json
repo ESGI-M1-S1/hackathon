@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ressource",
     "pluralName": "ressources",
-    "displayName": "Ressource"
+    "displayName": "Ressource",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +15,18 @@
     "name": {
       "type": "string"
     },
-    "link": {
-      "type": "string"
-    },
     "password": {
       "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
