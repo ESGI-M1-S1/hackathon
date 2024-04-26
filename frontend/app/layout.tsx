@@ -35,8 +35,8 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="fr">
         <body className={inter.className}>
-          <div className="bg-black border-b border-brown">
-            <Navbar fluid className="bg-black mx-40">
+          <div className="bg-blackCustom border-b border-brown">
+            <Navbar fluid className="bg-blackCustom max-w-screen-lg mx-auto">
               <div className={"flex items-center gap-8"}>
                 <NavbarBrand as={Link} href="/">
                   <div className={"relative mr-3 h-full aspect-square sm:h-9"}>
@@ -47,7 +47,7 @@ export default function RootLayout({
                       className=""
                     />
                   </div>
-                  <span className="self-center whitespace-nowrap text-xl text-brown font-semibold dark:text-white">
+                  <span className="self-center whitespace-nowrap text-xl text-brown font-semibold dark:text-whiteCustom">
                     Et Si Le Vin ?
                   </span>
                 </NavbarBrand>
@@ -58,9 +58,12 @@ export default function RootLayout({
                 </NavbarCollapse>
               </div>
               <div className="flex">
-                <Button className="bg-brown rounded-none text-white">
+                <Link
+                  href={"/workshop"}
+                  className="px-4 py-2 bg-brown rounded-none text-whiteCustom"
+                >
                   Participer à un atelier
-                </Button>
+                </Link>
                 <NavbarToggle />
               </div>
             </Navbar>
@@ -68,7 +71,7 @@ export default function RootLayout({
           <>{children}</>
           <Footer
             container
-            className="border-t border-t-brown rounded-none bg-black pt-12"
+            className="border-t border-t-brown rounded-none bg-blackCustom pt-12"
           >
             <div className="w-3/6 flex flex-col items-center">
               <FooterBrand
@@ -77,20 +80,23 @@ export default function RootLayout({
                 alt="Wine logo"
                 className="flex flex-col "
               />
-              <span className="text-white whitespace-nowrap text-2xl font-semibold">
+              <span className="text-whiteCustom whitespace-nowrap text-2xl font-semibold">
                 Et Si Le Vin ?
               </span>
             </div>
             <div className="flex justify-start items-start w-3/6">
-              <FooterLinkGroup col className="text-white mr-60">
-                <FooterTitle title="Pages" className="text-white" />
+              <FooterLinkGroup col className="text-whiteCustom mr-60">
+                <FooterTitle title="Pages" className="text-whiteCustom" />
                 <FooterLink href="/">Accueil</FooterLink>
                 <FooterLink href="/workshop">Atelier</FooterLink>
                 <FooterLink href="/about">A propos</FooterLink>
                 <FooterLink href="/login">Connexion</FooterLink>
               </FooterLinkGroup>
-              <FooterLinkGroup col className="text-white">
-                <FooterTitle title="Mention légale" className="text-white" />
+              <FooterLinkGroup col className="text-whiteCustom">
+                <FooterTitle
+                  title="Mention légale"
+                  className="text-whiteCustom"
+                />
                 <FooterLink href="#">Conditions générales</FooterLink>
                 <FooterLink href="#">Politique de confidentialité</FooterLink>
                 <FooterLink href="#">Paramètres des cookies</FooterLink>

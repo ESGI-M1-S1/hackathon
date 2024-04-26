@@ -11,12 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "event": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::event.event",
-      "inversedBy": "registrations"
-    },
     "email": {
       "type": "email"
     },

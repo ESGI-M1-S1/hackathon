@@ -14,10 +14,10 @@ const config: Config = {
       Amethysta: ["Amethysta", "serif"],
     },
     colors: {
-      black: "#050505",
+      blackCustom: "#050505",
       brownText: "#DBBCA4",
       brown: "#AD6F3D",
-      white: "#F1ECE9",
+      whiteCustom: "#F1ECE9",
       red: "#80002D",
     },
   },

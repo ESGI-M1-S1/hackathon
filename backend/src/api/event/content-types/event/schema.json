@@ -15,12 +15,6 @@
     "name": {
       "type": "string"
     },
-    "workshop": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::workshop.workshop",
-      "inversedBy": "events"
-    },
     "attendant_limit": {
       "type": "integer"
     },
@@ -45,13 +39,25 @@
     "registrations": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::registration.registration",
-      "mappedBy": "event"
+      "target": "api::registration.registration"
     },
     "ressources": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::ressource.ressource"
+    },
+    "description": {
+      "type": "text"
+    },
+    "event_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
